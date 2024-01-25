@@ -1,36 +1,57 @@
-// const navToggle = document.querySelector(".nav-toggle")
-// const navLinks = document.querySelectorAll(".nav_link")
+const toggleBtn = document.querySelector(".toggle_btn")
+const dropdownMenu = document.querySelector(".dropdown_menu")
+const navLinks = document.querySelectorAll(".nav_link")
 
-// navToggle.addEventListener("click", () => {
-// 	document.body.classList.toggle("nav-open")
+// document.body.addEventListener("click", () => {
+// 	dropdownMenu.classList.remove("clicked")
 // })
 
-// navLinks.forEach(link => {
-// 	link.addEventListener("click", () => {
-// 		document.body.classList.remove("nav-open")
-// 	})
-// })
+toggleBtn.addEventListener("click", () => {
+	dropdownMenu.classList.toggle("clicked")
+})
 
 
+document.body.addEventListener("resize", () => {
+	dropdownMenu.classList.remove("clicked")
+})
 
-const swiper = new Swiper('.swiper', {
-	// Optional parameters
-	direction: 'horizontal',
+navLinks.forEach(link => {
+	link.addEventListener("click", () => {
+		dropdownMenu.classList.remove("clicked")
+	})
+})
+
+document.body.addEventListener("touchmove", () => {
+	dropdownMenu.classList.remove("clicked")
+})
+
+var swiper = new Swiper(".swiper-container", {
+	slidesPerView: 3,
+	spaceBetween: 40,
+	// slidesPerGroup: 1,
 	loop: true,
-  
-	// If we need pagination
+	centerSlide: "true",
+	fade: "true",
+	grabCursor: "true",
+	// loopFillGroupWithBlank: true,
 	pagination: {
-	  el: '.swiper-pagination',
+		el: ".swiper-pagination",
+		clickable: true,
+		dynamicBullets: true,
 	},
-  
-	// Navigation arrows
 	navigation: {
-	  nextEl: '.swiper-button-next',
-	  prevEl: '.swiper-button-prev',
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
 	},
-  
-	// And if we need scrollbar
-	scrollbar: {
-	  el: '.swiper-scrollbar',
+	breakpoints: {
+		0: {
+			slidesPerView: 1,
+		},
+		640: {
+			slidesPerView: 2,
+		},
+		960: {
+			slidesPerView: 3,
+		},
 	},
-  });
+})
