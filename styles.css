@@ -11,6 +11,7 @@
 	--ff-secondery: "Source Code Pro", monospace;
 
 	--fw-reg: 300;
+	--fw-mid: 500;
 	--fw-bold: 900;
 
 	--clr-light: #fff;
@@ -236,7 +237,6 @@ h3 {
 
 	.section__subtitle--intro {
 		grid-area: subtitle;
-		align-self: start;
 		grid-column: -1/1;
 		margin-bottom: 5em;
 		width: calc(100% + 1.5em);
@@ -244,9 +244,6 @@ h3 {
 
 	.intro__img {
 		grid-area: img;
-		min-width: 250px;
-		max-width: 500px;
-		max-height: 350px;
 		position: relative;
 		padding-top: 0;
 	}
@@ -308,7 +305,7 @@ h3 {
 .skills-container > span {
 	font-size: 25px;
 	margin-bottom: 20px;
-	font-weight: 500;
+	font-weight: var(--fw-mid);
 }
 
 .languages {
@@ -363,7 +360,6 @@ h3 {
 .swiper-slide {
 	text-align: center;
 	font-size: 18px;
-	background: #7b1919;
 	/* Center slide text vertically */
 	display: -webkit-box;
 	display: -ms-flexbox;
